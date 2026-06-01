@@ -4,7 +4,6 @@ import java.awt.Graphics2D;
 import java.io.File;
 
 import main.SpriteHelper;
-import main.GamePanel;
 
 public class Tails{
 
@@ -12,7 +11,7 @@ public class Tails{
 	int y=3*main.GamePanel.screenHeight/12;
 	int width=5*main.GamePanel.screenWidth/20;
 	int height=5*main.GamePanel.screenHeight/12;
-	File tailsSprites=new File("/home/c00kieuser/git/platformerGit/platformer/res/testImages/");
+	File tailsSprites=new File("./res/testImages/");
 	File[] spriteList=tailsSprites.listFiles();
 	SpriteHelper tailsPix=new SpriteHelper(x,y,width,height);
 	

@@ -6,23 +6,22 @@ import java.io.*;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
-//the mission here is to be smarter than my current status quo
-//can we make a class where we can use a res file as a parameter
-//make images in such file an array and move through the array to draw sprites?
-
-//primarily trying to cut down lines of code in things we have to draw
-//is there a possibility of cutting down how many lines it takes to draw everything?
-
-import main.GamePanel;
 
 public class SpriteHelper{
 	
+	//sprite helper runs like shit on the red laptop but as does everything
+	//the class works beautifully if you can get a functional filepath
+	//these are tricky cos they change per device, i havent found out why
+	//pperil doesnt do ts
+	
+	//might need to tweak activation threshold per animation
 	
 	static int spriteNum=1;
 	static int spriteThreshold=0;
 	ArrayList<BufferedImage> images=new ArrayList<BufferedImage>();
 	BufferedImage image2draw;
 	int x,y,width,height;
+
 	
 	public SpriteHelper(int x, int y, int width, int height) {
 		this.x=x;
@@ -33,8 +32,6 @@ public class SpriteHelper{
 	public SpriteHelper() {
 		
 	}
-	
-	//whats unique to each object using class? #(frames), file
 	
 	//this "gets" all the images for a sprites animation and puts em in a list
 	//use this in the setup of anything with an image
@@ -49,9 +46,8 @@ public class SpriteHelper{
 			}
 		}
 	}
-	//we'll see how it looks when multiple objects use this, but rn i want spriteNum
-	//to be static as to not be running soo many useless counters, optimization yo
-	//run this on its own in gp's update
+	
+
 	public static void countUp() {
 		if(spriteThreshold<5) {
 			spriteThreshold++;
