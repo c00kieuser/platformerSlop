@@ -19,6 +19,7 @@ public class SpriteHelper{
 	
 	
 	static int spriteNum=1;
+	static int spriteThreshold=0;
 	ArrayList<BufferedImage> images=new ArrayList<BufferedImage>();
 	BufferedImage image2draw;
 	int x,y,width,height;
@@ -52,12 +53,19 @@ public class SpriteHelper{
 	//to be static as to not be running soo many useless counters, optimization yo
 	//run this on its own in gp's update
 	public static void countUp() {
-		if(spriteNum<24) {
-			spriteNum++;
+		if(spriteThreshold<5) {
+			spriteThreshold++;
 		}
 		else {
-			spriteNum=1;
-		}	
+			if(spriteNum<24) {
+				spriteNum++;
+			}
+			else {
+				spriteNum=1;
+			}
+			spriteThreshold=0;
+		}
+			
 	}
 	
 	public void update() {
